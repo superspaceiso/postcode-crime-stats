@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Postcode Crime Stats</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="card m-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-auto">
+                        <h1 class="text-center">Enter your full postcode to see the crime statistics for your local area.</h1>
+                    </div>
+                </div>
+                <form name="postcodeForm" method="post">
+                    <div class="row">
+                        <div class="col-1">
+                            <label for="postcode" class="col-form-label fs-5">Postcode:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" id="postcode" name="postcode" class="form-control fs-5">
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" class="btn btn-primary w-100 fs-5" id="postcodeSearchBtn" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card m-4" id="statsHidden">
+            <div class="card-body">
+                <div class="row">
+                    <h2 class="text-center">Crime Statistics for <span id="userPostcode"></span></h2>
+                    <p class="fs-5 text-center">Total number of crimes reported within a one mile radius of your postcode is <strong><span id="numCrimes"></span></strong> in the month of <strong><span id="lastUpdate"></span></strong>.</p>
+                </div>
+                <div class="row p-2">
+                    <h3 class="text-center">Breakdown of Reported Crimes</h3>
+                    <div id="crimeTypeChart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script type="text/javascript" src="js/crimeSearch.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

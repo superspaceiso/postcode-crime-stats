@@ -1,0 +1,23 @@
+.apexcharts-legend-text{
+  text-transform: capitalize;
+}
+
+#statsHidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
+#statsVisible{
+  animation: animateOpacity 500ms forwards;
+}
+
+@keyframes animateOpacity {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 100%;
+  }
+}
